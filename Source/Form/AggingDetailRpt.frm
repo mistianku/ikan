@@ -1,0 +1,385 @@
+VERSION 5.00
+Object = "{3771C1D4-CBC4-476C-A80C-BC636FEF6851}#1.0#0"; "vsdflat3.ocx"
+Object = "{D78906A1-98CD-4199-A5A9-ACDC94BC2F02}#4.1#0"; "neocalendarii.ocx"
+Begin VB.Form AggingDetailRpt 
+   BackColor       =   &H8000000A&
+   Caption         =   "Umur Faktur Report"
+   ClientHeight    =   5835
+   ClientLeft      =   -135
+   ClientTop       =   645
+   ClientWidth     =   10170
+   ControlBox      =   0   'False
+   DrawMode        =   7  'Invert
+   DrawStyle       =   6  'Inside Solid
+   BeginProperty Font 
+      Name            =   "MS Sans Serif"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   700
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   LinkTopic       =   "Form1"
+   MDIChild        =   -1  'True
+   ScaleHeight     =   5835
+   ScaleWidth      =   10170
+   WindowState     =   2  'Maximized
+   Begin VB.Frame Frame1 
+      BackColor       =   &H8000000A&
+      Height          =   615
+      Index           =   3
+      Left            =   120
+      TabIndex        =   11
+      Top             =   1080
+      Width           =   10455
+      Begin VB.CheckBox Check1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         Caption         =   "Semua Customer"
+         ForeColor       =   &H80000008&
+         Height          =   255
+         Index           =   0
+         Left            =   240
+         TabIndex        =   12
+         Top             =   240
+         Value           =   1  'Checked
+         Width           =   3855
+      End
+   End
+   Begin VB.Frame Frame1 
+      BackColor       =   &H8000000A&
+      Caption         =   "Tanggal Cutt Off Aging"
+      Height          =   855
+      Index           =   2
+      Left            =   120
+      TabIndex        =   8
+      Top             =   120
+      Width           =   10455
+      Begin NeoCalendarII.DatePicker FlatDatePicker1 
+         Height          =   315
+         Index           =   0
+         Left            =   2280
+         TabIndex        =   10
+         Top             =   360
+         Width           =   1815
+         _ExtentX        =   3201
+         _ExtentY        =   556
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BorderStyle     =   2
+         FlatButton      =   0   'False
+         AllowEmpty      =   0   'False
+         ShowFocusRect   =   0   'False
+         UseFocusColor   =   0   'False
+         CalendarHeaderForeColor=   -2147483630
+         EmptyButtonCaption=   "None"
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Tanggal Cut Off"
+         Height          =   315
+         Index           =   1
+         Left            =   120
+         TabIndex        =   9
+         Top             =   360
+         Width           =   2055
+      End
+   End
+   Begin VB.Frame Frame1 
+      BackColor       =   &H8000000A&
+      Caption         =   "Tampilan"
+      Height          =   975
+      Index           =   1
+      Left            =   120
+      TabIndex        =   1
+      Top             =   2760
+      Width           =   10455
+      Begin VB.OptionButton Option1 
+         BackColor       =   &H8000000A&
+         Caption         =   "Rekap"
+         Height          =   375
+         Index           =   1
+         Left            =   1440
+         TabIndex        =   7
+         Top             =   360
+         Width           =   3015
+      End
+      Begin VB.OptionButton Option1 
+         BackColor       =   &H8000000A&
+         Caption         =   "Detail"
+         Height          =   375
+         Index           =   0
+         Left            =   120
+         TabIndex        =   6
+         Top             =   360
+         Value           =   -1  'True
+         Width           =   1815
+      End
+   End
+   Begin VB.Frame Frame1 
+      BackColor       =   &H8000000A&
+      Caption         =   "Customer"
+      Height          =   855
+      Index           =   0
+      Left            =   120
+      TabIndex        =   0
+      Top             =   1800
+      Width           =   10455
+      Begin VB.TextBox Text1 
+         Appearance      =   0  'Flat
+         BorderStyle     =   0  'None
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   1
+         Left            =   4080
+         TabIndex        =   4
+         Text            =   "Text1"
+         Top             =   360
+         Width           =   6075
+      End
+      Begin VB.TextBox Text1 
+         Appearance      =   0  'Flat
+         BorderStyle     =   0  'None
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   0
+         Left            =   2220
+         TabIndex        =   3
+         Text            =   "Text1"
+         Top             =   360
+         Width           =   1335
+      End
+      Begin VSDFLATS.FlatButton BrowseUserID 
+         Height          =   255
+         Index           =   0
+         Left            =   3600
+         TabIndex        =   2
+         Top             =   360
+         Width           =   495
+         _ExtentX        =   873
+         _ExtentY        =   450
+         MouseIcon       =   "AggingDetailRpt.frx":0000
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Caption         =   "..."
+         Enabled         =   0   'False
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Dari Kode.Customer"
+         Height          =   315
+         Index           =   0
+         Left            =   120
+         TabIndex        =   5
+         Top             =   360
+         Width           =   2055
+      End
+   End
+End
+Attribute VB_Name = "AggingDetailRpt"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+Dim oCon As New ADODB.Connection
+Dim oRs As New ADODB.Recordset
+Dim sQuery As String
+Dim istatus As StatusForm
+
+
+Private Sub BrowseUserID_Click(Index As Integer)
+Dim oBrowse As New BrowseFrm
+Dim sKriteria As String
+Dim sstssiswa As String
+If Option1(0).value = True Then
+    sKriteria = "stssiswa='1'"
+End If
+If Option1(1).value = True Then
+    sKriteria = "stssiswa='0'"
+End If
+'If Option1(2).value = True Then
+'    sKriteria = "''=''"
+'End If
+
+
+
+Select Case Index
+Case 0
+    oBrowse.ShowFinder Browscustomer, "", ubAscending, DBaseConection.Modul
+    If Not oBrowse.YangDipilih = "" Then
+        Text1(0) = oBrowse.YangDipilih
+        Text1(1) = oBrowse.Keterangan
+    End If
+Case 1
+    oBrowse.ShowFinder Browscustomer, "", ubAscending, DBaseConection.Modul
+    If Not oBrowse.YangDipilih = "" Then
+        Text1(2) = oBrowse.YangDipilih
+        Text1(3) = oBrowse.Keterangan
+    End If
+End Select
+Set oBrowse = Nothing
+End Sub
+
+
+Private Sub Check1_Click(Index As Integer)
+If Check1(0).value = Checked Then
+    Text1(0).Enabled = False
+    Text1(1).Enabled = False
+    BrowseUserID(0).Enabled = False
+Else
+    Text1(0).Enabled = True
+    Text1(1).Enabled = True
+    BrowseUserID(0).Enabled = True
+End If
+End Sub
+
+Private Sub Form_Activate()
+Dim sTitle As String
+sTitle = "Umur Faktur Report"
+'lblTitle.Caption = "  : .  " & sTitle & "  . :  "
+Me.Caption = " " & sTitle & " "
+MenuFrm.SetToolbarku Me, istatus, MenuFrm.sGroupUserID, mnAggingDetailRpt
+End Sub
+
+Private Sub Form_Load()
+oInsertModulMenu Me.Name, Me.Caption, entrian, MenuFrm.sinsertmodul
+oFormatWarnaLabel sWarnaLabel, sWarnaText, sWarnaBackcolour, Me
+oFormatCheckList 1, Me
+
+oFormatOption 1, Me
+oFormatCheckList 1, Me
+FlatDatePicker1(0).value = DateSerial(Year(Now()), Month(Now()), 1)
+'FlatDatePicker1(1).value = Now()
+
+istatus = Normal
+cleardata
+BrowseUserID(0).Top = Text1(0).Top
+BrowseUserID(0).Height = Text1(0).Height
+BrowseUserID(0).Left = Text1(0).Left + Text1(0).Width
+
+'BrowseUserID(1).Top = Text1(2).Top
+'BrowseUserID(1).Height = Text1(2).Height
+'BrowseUserID(1).Left = Text1(2).Left + Text1(2).Width
+
+End Sub
+Public Sub Closeform()
+Set oCon = Nothing
+MenuFrm.SetToolbar MainMenu
+Unload Me
+ShowFormMessage MainMenumsg
+End Sub
+Private Sub cleardata()
+Dim i As Integer
+For i = 0 To Text1.Count - 1
+    Text1(i).text = ""
+Next
+'    Text1(0).Enabled = False
+'    Text1(1).Enabled = False
+End Sub
+Public Sub Execution()
+On Error GoTo errhandler
+Dim sstssiwa As String
+Dim ssortby As Integer
+Dim snoidsiswafr As String
+Dim snoidsiswato As String
+Dim stglfr As String
+Dim stglto As String
+
+stglfr = Format(FlatDatePicker1(0).value, "YYYY-MM-DD")
+'stglto = Format(FlatDatePicker1(1).value, "YYYY-MM-DD")
+snoidsiswafr = IIf(Check1(0).value = Unchecked, "N", "Y")
+
+
+Dim txtmessage As String
+txtmessage = "Tidak Ada Data Sesuai dengan Kriteria Yang Dipilih !! "
+
+If Option1(0).value = True Then ' Agging Detail
+
+        sQuery = "call sp_aging_report_detail('"
+        sQuery = sQuery & Text1(0) & "','"
+        sQuery = sQuery & stglfr & "','"
+        sQuery = sQuery & snoidsiswafr & "',"
+        
+'        CALL sp_aging_report_detail('PPY BDG','2014-11-10','Y')
+        
+        If oFindByQuery(sQuery & "1)", DBaseConection.Modul) = 0 Then
+            MsgBox txtmessage, vbInformation, "Pesan Cetak Master customer "
+            Exit Sub
+        End If
+        With arAggingRptDetail
+            .lblHeaderTrx = Me.Caption
+            .lblCutOffDate = "Tgl. Cut Off : " & stglfr
+        
+            .adoKu.ConnectionString = MainModule.Conectionku(DBaseConection.Modul)
+            .adoKu.Source = sQuery & "0)"
+            
+            .Show
+        End With
+Else
+
+         sQuery = "call sp_aging_report_rekap('"
+        sQuery = sQuery & Text1(0) & "','"
+        sQuery = sQuery & stglfr & "','"
+        sQuery = sQuery & snoidsiswafr & "',"
+        
+        'sp_transaksi_keluar_rpt`(IN stglfr DATE ,stglto DATE ,
+        'skodecustomerfr CHAR(15),skodecustomerto CHAR(15),ssortby INT,sget INT)
+        
+        If oFindByQuery(sQuery & "1)", DBaseConection.Modul) = 0 Then
+            MsgBox txtmessage, vbInformation, "Pesan Cetak Master customer "
+            Exit Sub
+        End If
+        With arAggingRptRekap
+            .lblHeaderTrx = "Aging Summary Report "
+        
+            
+            .adoKu.ConnectionString = MainModule.Conectionku(DBaseConection.Modul)
+            .adoKu.Source = sQuery & "0)"
+            
+        '    .lblkode.Caption = "Kode Custmr"
+        '    .lblketerangan.Caption = "Nama Customer"
+        '    .txtkodeproduk.DataField = "custmrcode"
+        '    .txtproductname.DataField = "custmrname"
+        '    .PageSettings.Orientation = ddOPortrait
+        '    .PageSettings.PaperHeight = MenuFrm.stinggi
+        '    .PageSettings.PaperWidth = MenuFrm.slebar
+        '    .PageSettings.LeftMargin = MenuFrm.skiri
+        '    .PageSettings.RightMargin = MenuFrm.skanan
+            .Show
+        End With
+End If
+Exit Sub
+errhandler:
+MainModule.ShowMessage Err.Description, "Master Product Price"
+End Sub
+
