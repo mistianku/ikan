@@ -1,0 +1,17 @@
+Penambahan Modul di Aplikasi Sayur
+1. Entry Tanda Bukti Pembayaran
+	Transaksi , Tanda Terima Pembayaran
+	Note : Faktur yg bisa ditarik hanya faktur yg sudah tukar faktur
+2. Cetak Tanda Bukti Pembayaran
+	Cetak langsung dari menu 
+	Transaksi , Tanda Terima Pembayaran (form Entry)
+3. Cetak Report Tanda Bukti Pembayaran
+	Report Transaksi , Tanda Terima Pembayaran
+
+
+Note : Jika error terkait tampilan TERBILANG 
+
+	- lakukan Regsvr32 "c:\CRUFLFungsiku.dll"
+	
+	sintak 
+	Regsvr32 "[Lokasifile]\CRUFLFungsiku.dll"
