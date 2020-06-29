@@ -3,7 +3,7 @@ Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.MDIForm MenuFrm 
    Appearance      =   0  'Flat
    BackColor       =   &H00FFC0C0&
-   Caption         =   "IkanMD Release 19.11.12"
+   Caption         =   "IkanMD Release 19.11.12.01"
    ClientHeight    =   7845
    ClientLeft      =   -120
    ClientTop       =   390
@@ -224,12 +224,12 @@ Begin VB.MDIForm MenuFrm
          BeginProperty Panel7 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
             Alignment       =   2
-            TextSave        =   "12/11/2019"
+            TextSave        =   "6/29/2020"
          EndProperty
          BeginProperty Panel8 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   5
             Alignment       =   2
-            TextSave        =   "09:33"
+            TextSave        =   "4:07 PM"
          EndProperty
       EndProperty
    End
